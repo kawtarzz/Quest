@@ -6,7 +6,7 @@ namespace Quest
     // This is an "immutable" property. It only has a "get".
     // The only place the Name can be set is in the Adventurer constructor
     // Note: the constructor is defined below.
-    public string Name { get; }
+    public string Name { get; set; }
 
     // This is a mutable property it has a "get" and a "set"
     //  So it can be read and changed by any code in the application
@@ -15,10 +15,12 @@ namespace Quest
     // A constructor to make a new Adventurer object with a given name
     public Adventurer(string name)
     {
-      Name = name;
-      Awesomeness = 50;
-    }
+      System.Console.WriteLine("What is your name, Adventurer?");
 
+      Name = System.Console.ReadLine();
+
+      System.Console.WriteLine("Hello, " + Name + "! Let's start the Adventure!");
+    }
 
     // This method returns a string that describes the Adventurer's status
     // Note one way to describe what this method does is:
